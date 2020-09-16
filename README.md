@@ -1,5 +1,5 @@
 # Javengine
-Just in case it wasn't odbvious, Java + Engine = Javengine. A software renderer built  in Java. 
+Just in case it wasn't obvious, Java + Engine = Javengine. A software renderer built  in Java. 
 
 ## Why? 
 I'm currently taking a Java class, so I figure I should practice with the languaje at some point. As to why pick a
