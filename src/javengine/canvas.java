@@ -56,17 +56,17 @@ public class canvas
         configure_buffer();
     }
 
-    public void setPixel(int x, int y, int r, int g, int b)
+    public JFrame getFrame()
     {
-        if(x < 0 || y < 0 || x > width || y > height)
-        {
-            return;
-        }
+        return frame;
+    }
 
-        int index = y * width + x;
-        raw_buffer[index] = r;
-        raw_buffer[index + 1] = g;
-        raw_buffer[index + 2] = b;
+    public void setPixel(int x, int y, short r, short g, short b)
+    {
+        if(x >= width || y >= height)
+        {return;}
+        //logger.log(String.valueOf(x));
+        raw_buffer[y * width + x] = (int)(r | g << 8 | b << 16);
     }
 
     public void paint()
@@ -76,5 +76,15 @@ public class canvas
         {configure_buffer();}
 
         graphics.drawImage(buffered_image , 0, 0, null);
+    }
+
+    public int getWidth()
+    {
+        return width;
+    }
+
+    public int getHeight()
+    {
+        return height;
     }
 }

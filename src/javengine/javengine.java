@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 
 import javengine.canvas;
+import javengine.logger;
 
 public class javengine
 {
@@ -13,9 +14,10 @@ public class javengine
         canvas c = new canvas(200, 200);
         for(;;)
         {
-            for(int i = 0; i < 199; i++)
+            for(int x = 0; x < c.getWidth(); x++)
             {
-                c.setPixel(i, i, 255, 255, 255);
+                for(int y = 0; y < c.getHeight(); y++)
+                    c.setPixel(x, y, (short)(255 % (y+1)), (short)(255 % (y+1)), (short)(255 % (y+1)));
             }
             c.paint();
         }
