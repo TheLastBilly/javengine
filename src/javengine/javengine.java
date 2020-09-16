@@ -11,6 +11,7 @@ public class javengine
 {
     public static void main(String[] args) 
     {
+        //logger.initFileOutput("./javengine.log");
         canvas c = new canvas(200, 200);
         for(;;)
         {
